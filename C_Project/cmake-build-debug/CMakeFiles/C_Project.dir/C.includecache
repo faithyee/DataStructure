@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/yewmf/C_Project/00_Status.h
+
+C:/Users/yewmf/C_Project/01_SequenceList.c
+01_SequenceList.h
+C:/Users/yewmf/C_Project/01_SequenceList.h
+
+C:/Users/yewmf/C_Project/01_SequenceList.h
+stdio.h
+-
+stdlib.h
+-
+00_Status.h
+C:/Users/yewmf/C_Project/00_Status.h
+
+C:/Users/yewmf/C_Project/02_Union.c
+02_Union.h
+C:/Users/yewmf/C_Project/02_Union.h
+
+C:/Users/yewmf/C_Project/02_Union.h
+01_SequenceList.c
+C:/Users/yewmf/C_Project/01_SequenceList.c
+
+C:/Users/yewmf/C_Project/main.c
+stdio.h
+-
+01_SequenceList.c
+C:/Users/yewmf/C_Project/01_SequenceList.c
+02_Union.c
+C:/Users/yewmf/C_Project/02_Union.c
+
