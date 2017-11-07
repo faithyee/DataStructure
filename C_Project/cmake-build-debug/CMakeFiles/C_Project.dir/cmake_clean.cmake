@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/C_Project.dir/main.c.obj"
-  "CMakeFiles/C_Project.dir/04_SinglyLinkedList.c.obj"
   "C_Project.pdb"
   "C_Project.exe"
   "C_Project.exe.manifest"

@@ -82,12 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/yewmf/Desktop/DataStructure/C_Project/04_SinglyLinkedList.c">
-			<Option target="C_Project"/>
-		</Unit>
-		<Unit filename="C:/Users/yewmf/Desktop/DataStructure/C_Project/04_SinglyLinkedList.h">
-			<Option target="C_Project"/>
-		</Unit>
 		<Unit filename="C:/Users/yewmf/Desktop/DataStructure/C_Project/main.c">
 			<Option target="C_Project"/>
 		</Unit>

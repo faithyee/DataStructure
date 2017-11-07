@@ -6,9 +6,10 @@
 #ifndef C_PROJECT_04_SINGLYLINKEDLIST_H
 #define C_PROJECT_04_SINGLYLINKEDLIST_H
 
-#include <stdio.h>
-#include <stdlib.h>
+
 #include "00_Status.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /***
  * 单链表类型定义
@@ -55,7 +56,7 @@ int LocateElem_L(LinkList L, LElemType_L e, Status(Compare)(LElemType_L, LElemTy
 Status PriorElem_L(LinkList L, LElemType_L cur_e, LElemType_L *pre_e);
 
 //用next_e接收cur_e的后继
-Status NextElem_L(LElemType_L L, LElemType_L cur_e, LElemType_L *next_e);
+Status NextElem_L(LinkList L, LElemType_L cur_e, LElemType_L *next_e);
 
 //在单链表L第i个位置之前插入e
 Status ListInsert_L(LinkList L, int i, LElemType_L e);
@@ -78,5 +79,8 @@ Status CmpGreater(LElemType_L e, LElemType_L data);
 
 //测试函数，打印整型
 void PrintElem(LElemType_L e);
+
+//测试用例
+void testSinglyLinkedList();
 
 #endif //C_PROJECT_04_SINGLYLINKEDLIST_H

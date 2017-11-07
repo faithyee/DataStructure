@@ -122,33 +122,6 @@ C_Project/fast:
 	$(MAKE) -f CMakeFiles\C_Project.dir\build.make CMakeFiles/C_Project.dir/build
 .PHONY : C_Project/fast
 
-04_SinglyLinkedList.obj: 04_SinglyLinkedList.c.obj
-
-.PHONY : 04_SinglyLinkedList.obj
-
-# target to build an object file
-04_SinglyLinkedList.c.obj:
-	$(MAKE) -f CMakeFiles\C_Project.dir\build.make CMakeFiles/C_Project.dir/04_SinglyLinkedList.c.obj
-.PHONY : 04_SinglyLinkedList.c.obj
-
-04_SinglyLinkedList.i: 04_SinglyLinkedList.c.i
-
-.PHONY : 04_SinglyLinkedList.i
-
-# target to preprocess a source file
-04_SinglyLinkedList.c.i:
-	$(MAKE) -f CMakeFiles\C_Project.dir\build.make CMakeFiles/C_Project.dir/04_SinglyLinkedList.c.i
-.PHONY : 04_SinglyLinkedList.c.i
-
-04_SinglyLinkedList.s: 04_SinglyLinkedList.c.s
-
-.PHONY : 04_SinglyLinkedList.s
-
-# target to generate assembly for a file
-04_SinglyLinkedList.c.s:
-	$(MAKE) -f CMakeFiles\C_Project.dir\build.make CMakeFiles/C_Project.dir/04_SinglyLinkedList.c.s
-.PHONY : 04_SinglyLinkedList.c.s
-
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -185,9 +158,6 @@ help:
 	@echo ... C_Project
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... 04_SinglyLinkedList.obj
-	@echo ... 04_SinglyLinkedList.i
-	@echo ... 04_SinglyLinkedList.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
