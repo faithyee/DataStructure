@@ -6,25 +6,5 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/yewmf/Desktop/DataStructure/C_Project/00_Status.h
-
-C:/Users/yewmf/Desktop/DataStructure/C_Project/04_SinglyLinkedList.c
-04_SinglyLinkedList.h
-C:/Users/yewmf/Desktop/DataStructure/C_Project/04_SinglyLinkedList.h
-
-C:/Users/yewmf/Desktop/DataStructure/C_Project/04_SinglyLinkedList.h
-00_Status.h
-C:/Users/yewmf/Desktop/DataStructure/C_Project/00_Status.h
-stdlib.h
--
-stdio.h
--
-
-C:/Users/yewmf/Desktop/DataStructure/C_Project/05_MergeList.c
-04_SinglyLinkedList.c
-C:/Users/yewmf/Desktop/DataStructure/C_Project/04_SinglyLinkedList.c
-
 C:/Users/yewmf/Desktop/DataStructure/C_Project/main.c
-05_MergeList.c
-C:/Users/yewmf/Desktop/DataStructure/C_Project/05_MergeList.c
 
