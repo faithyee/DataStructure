@@ -5,6 +5,7 @@
 //#include "03_MergeSqList.c"
 //#include "04_SinglyLinkedList.c"
 //#include "05_MergeList.c"
+#include "08_DualCycleLinkedList.c"
 
 int main() {
 //    testSequenceList();
@@ -14,6 +15,7 @@ int main() {
 //    testSinglyLinkedList();
 //    testSinglyLinkedList();
 //    testMergeList_L();
+    testDualCycleLinkedList();
 
     return 0;
 }
