@@ -68,10 +68,10 @@ Status ListDelete_L(LinkList L, int i , LElemType_L *e);
 Status ListTraverse_L(LinkList L, void(Visit)(LElemType_L));
 
 //头插法建立 单链表（逆序输入）
-Status CreateList_HL(FILE *fp, LinkList *L, int n);
+Status CreateList_HL(LinkList *L, int n);
 
 //尾插法建立单链表L（顺序输入）
-Status CreateList_TL(FILE *fp , LinkList *L, int n);
+Status CreateList_TL(LinkList *L, int n);
 
 
 //判断data是否大于e，若data大于e，返回TRUE

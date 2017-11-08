@@ -158,10 +158,8 @@ Status PriorElem_L(LinkList L, LElemType_L cur_e, LElemType_L *pre_e){
                     *pre_e = p->data;
                     return OK;
                 }
-                p == suc;
-
+                p = suc;
             }
-
         }
     }
 
@@ -198,6 +196,10 @@ Status NextElem_L(LinkList L, LElemType_L cur_e, LElemType_L *next_e){
 }
 
 //在单链表L第i个位置之前插入e
+/**
+ * 插入逻辑，即通过指针定位，定位到要插入的位置的前一个结点，通过前一个结点
+ * 来把要插入的第i个结点接到（找到的i-1）结点的后面。
+ */
 Status ListInsert_L(LinkList L, int i, LElemType_L e){
 
     LinkList p,s;
@@ -221,6 +223,7 @@ Status ListInsert_L(LinkList L, int i, LElemType_L e){
         exit(OVERFLOW);
     }
 
+    //结点插入逻辑,在i-1的后面插入新结点s
     s->data = e;
     s->next = p->next;
     p->next = s;
@@ -247,10 +250,10 @@ Status ListDelete_L(LinkList L, int i , LElemType_L *e){
         return ERROR;
     }
 
-    p = pre->next;
-    pre->next = p->next;
-    *e = p->data;
-    free(p);
+    p = pre->next;//定位到pre的后一个结点
+    pre->next = p->next;//删除pre后的结点
+    *e = p->data;//返回pre后的结点的值
+    free(p);//清空删除的结点
 
     return OK;
 
@@ -267,8 +270,8 @@ Status ListTraverse_L(LinkList L, void(Visit)(LElemType_L)){
     }
 
     while (p){
-        Visit(p->data);
-        p = p->next;
+        Visit(p->data);//打印结构里的值
+        p = p->next;//链表遍历
     }
 
     return OK;
@@ -276,7 +279,7 @@ Status ListTraverse_L(LinkList L, void(Visit)(LElemType_L)){
 }
 
 //头插法建立 单链表（逆序输入）
-Status CreateList_HL(FILE *fp, LinkList *L, int n){
+Status CreateList_HL(LinkList *L, int n){
 
     int i;
     LinkList p;
@@ -289,20 +292,22 @@ Status CreateList_HL(FILE *fp, LinkList *L, int n){
     }
     (*L)->next = NULL;
 
-    for (int i = 1; i < n; ++i) {
+    for (int i = 1; i <= n; ++i) {
 
-//        if(scanf(fp, "%d", &tmp)== 1){
-//            p = (LinkList)malloc(sizeof(LNode));
-//            if(!p){
-//                exit(OVERFLOW);
-//            }
-//
-//            p->data = tmp;
-//            p->next = (*L)->next;
-//            (*L)->next = p;
-//        } else{
-//            return ERROR;
-//        }
+        scanf("%d", &tmp);
+        if(tmp != 1){
+
+            p = (LinkList)malloc(sizeof(LNode));
+            if(!p){
+                exit(OVERFLOW);
+            }
+
+            p->data = tmp;
+            p->next = (*L)->next;
+            (*L)->next = p;
+        } else{
+            return ERROR;
+        }
     }
 
     return OK;
@@ -310,7 +315,7 @@ Status CreateList_HL(FILE *fp, LinkList *L, int n){
 
 
 //尾插法建立单链表L（顺序输入）
-Status CreateList_TL(FILE *fp , LinkList *L, int n){
+Status CreateList_TL(LinkList *L, int n){
 
     int i;
     LinkList p, q;
@@ -323,17 +328,18 @@ Status CreateList_TL(FILE *fp , LinkList *L, int n){
     (*L)->next = NULL;
 
     for(i = 1, q = *L; i <= n; ++i){
-//        if(scanf(fp, "%d", &tmp)== 1){
-//            p = (LinkList)malloc(sizeof(LNode));
-//            if(!p){
-//                exit(OVERFLOW);
-//            }
-//            p->data = tmp;
-//            q->next = p;
-//            q = q->next;
-//        } else{
-//            return ERROR;
-//        }
+        scanf("%d", &tmp);
+        if(tmp != 1){
+            p = (LinkList)malloc(sizeof(LNode));
+            if(!p){
+                exit(OVERFLOW);
+            }
+            p->data = tmp;
+            q->next = p;
+            q = q->next;
+        } else{
+            return ERROR;
+        }
     }
 
     q->next = NULL;
@@ -385,7 +391,107 @@ void testSinglyLinkedList(){
     }
     PressEnter;
 
-    ListTraverse_L(L, PrintElem);
+
+    printf("12. ListTraverse_L fun test...\n");
+    {
+        printf("L List is : ");
+        ListTraverse_L(L, PrintElem);
+        printf("\n");
+    }
+    PressEnter;
+
+    printf("5. ListLength_L fun test...\n");
+    {
+        printf("the length of L is : %d \n", ListLength_L(L));
+        printf("\n");
+    }
+    PressEnter;
+
+    printf("11. ListDelete_L fun test...\n");
+    {
+        ListDelete_L(L, 6, &e);
+        printf("the %d th of the element %d is deleted on L \n", 6, e);
+        printf("The new L List is : ");
+        ListTraverse_L(L, PrintElem);
+        printf("\n");
+    }
+    PressEnter;
+
+    printf("6. GetElem_L fun test...\n");
+    {
+        GetElem_L(L, 4, &e);
+        printf("the %d th element is %d on L \n", 4, e);
+        printf("\n");
+    }
+    PressEnter;
+
+    printf("7. LocateElem_L fun test...\n");
+    {
+        i = LocateElem_L(L, 7, CmpGreater);
+        printf("the element of the first bigger than 7 is in %dth place \n", i);
+        printf("\n");
+    }
+    PressEnter;
+
+    printf("8. PriorElem_L fun test...\n");
+    {
+        PriorElem_L(L, 6, &e);
+        printf("the prior element of the element 6 is %d \n", e);
+        printf("\n");
+    }
+    PressEnter;
+
+    printf("9. NextElem_L fun test...\n");
+    {
+        NextElem_L(L, 6, &e);
+        printf("the next element of the element 6 is %d \n", e);
+        printf("\n");
+    }
+    PressEnter;
+
+    printf("2. ClearList_L fun test...\n");
+    {
+        printf("L List before clear : \n");
+        ListEmpty_L(L)? printf("L is Empty!\n"): printf("L is not empty!\n");
+        ClearList_L(L);
+        printf("L List after clear : \n");
+        ListEmpty_L(L)? printf("L is Empty!\n"): printf("L is not empty!\n");
+        printf("\n");
+    }
+    PressEnter;
+
+    printf("3. DestroyList_L fun test...\n");
+    {
+        printf("L List before destroy : \n");
+        L? printf("L is exist!\n"): printf("L is not exist!\n");
+        DestroyList_L(&L);
+        printf("L List after destroy : \n");
+        L? printf("L is exist!\n"): printf("L is not exist!\n");
+        printf("\n");
+    }
+    PressEnter;
+
+    printf("13. CreateList_HL fun test...\n");
+    {
+        LinkList HL;
+        printf("Building L list by head-inserting method : \n");
+        CreateList_HL(&HL, 5);
+        printf("the created HL List is : \n");
+        ListTraverse_L(HL, PrintElem);
+        printf("\n");
+    }
+    PressEnter;
+
+    printf("14. CreateList_TL fun test...\n");
+    {
+        LinkList TL;
+        printf("Building L list by tail-inserting method : \n");
+        CreateList_TL(&TL, 5);
+        printf("the created TL List is : \n");
+        ListTraverse_L(TL, PrintElem);
+        printf("\n");
+    }
+    PressEnter;
 
 
 }
