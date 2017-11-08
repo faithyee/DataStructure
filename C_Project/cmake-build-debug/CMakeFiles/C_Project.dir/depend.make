@@ -4,5 +4,6 @@
 CMakeFiles/C_Project.dir/main.c.obj: ../00_Status.h
 CMakeFiles/C_Project.dir/main.c.obj: ../04_SinglyLinkedList.c
 CMakeFiles/C_Project.dir/main.c.obj: ../04_SinglyLinkedList.h
+CMakeFiles/C_Project.dir/main.c.obj: ../05_MergeList.c
 CMakeFiles/C_Project.dir/main.c.obj: ../main.c
 
